@@ -22,8 +22,22 @@ In order to develop and test the methods presented in this project, local univer
 
 ## Methodology
 
+Clustering the entire HECATE catalog is a computationally expensive process. Moreover, determining the optimal hyperparameters for the clustering algorithms is not straightforward. The availability of cluster labels for a small subset of HECATE presented an opportunity to apply **semi-supervised** methods. In this approach, domain knowledge, specifically the known cluster labels for certain galaxies, was leveraged. This allowed to effectively assess how the clustering algorithms identified cluster structures, potential galaxy alignments, and projection effects.
+
+### Selection of galaxies
+
+Through
+
+
 
 ## Results
 
-
-## Data and Citation
+### DBSCAN
+* Pros
+* Cons
+### Agglomerative Clustering
+* Pros
+* Cons
+### Sequential Approach
+* Pros
+* Cons
