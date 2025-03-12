@@ -1,6 +1,6 @@
 # Galaxy Clustering in 3D space
 
-This projects involve a clustering analysis, on the [HECATE](https://ui.adsabs.harvard.edu/abs/2021MNRAS.506.1896K/abstract) galaxy catalog 
+This project involve a clustering analysis, on the [HECATE](https://ui.adsabs.harvard.edu/abs/2021MNRAS.506.1896K/abstract) galaxy catalog 
 based on the galaxies spatial arrangement, with the intention of assigning cluster identifiers to each galaxy candidate. The project builds upon the
 Master's Thesis titled ["Galaxy cluster detection in the local universe, using machine learning methods"](https://elocus.lib.uoc.gr//dlib/e/1/5/metadata-dlib-1698042506-220193-30897.tkl).
 The proposed methods include the use of DBSCAN, Agglomerative Clustering and a combination (stacking) of these two clustering algorithms. 
