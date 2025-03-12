@@ -22,14 +22,6 @@ In order to develop and test the methods presented in this project, local univer
 
 ## Methodology
 
-Epeidi to hecate galaxy set einai polu megalo kai i diadikasia clustering polu kostovora, de tha borousa apla na patisw na 3ekinisei to
-clustering xwris na 3erw tis kataliles parametrous kathe algorithmou. In order to find the best clustering hyper parameters I performed semi supervised
-clustering
-
-eprepe na kanw cross match autoys tous katalogous me thn Hecate
-wste na vrw poioi galaxies are knwon to reside big clusters, and then semi-supervised clustering to check how well the 
-algorithms find the galaxy clusters
-
 
 ## Results
 
