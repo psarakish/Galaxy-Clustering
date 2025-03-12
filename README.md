@@ -22,13 +22,15 @@ In order to develop and test the methods presented in this project, local univer
 
 ## Methodology
 
-Clustering the entire HECATE catalog is a computationally expensive process. Moreover, determining the optimal hyperparameters for the clustering algorithms is not straightforward. The availability of cluster labels for a small subset of HECATE presented an opportunity to apply **semi-supervised** methods. In this approach, domain knowledge, specifically the known cluster labels for certain galaxies, was leveraged. This allowed to effectively assess how the clustering algorithms identified cluster structures, potential galaxy alignments, and projection effects.
+Clustering the entire HECATE catalog is a computationally expensive process. Moreover, determining the optimal hyperparameters for the clustering algorithms is not straightforward. The availability of cluster labels for a small subset of HECATE presented an opportunity to apply **semi-supervised** methods. These are nearby galaxies that are known to reside big clusters, such as Coma, Hydra and Virgo. In this approach, that domain knowledge, specifically the known cluster labels for certain galaxies, was leveraged. This allowed to effectively assess how the clustering algorithms identified these cluster structures, potential galaxy alignments, and projection effects.
 
 ### Selection of galaxies
 
-Through [TOPCAT (Tool for OPerations on Catalogues And Tables)](https://www.star.bris.ac.uk/~mbt/topcat/) all HECATE galaxies were cross matched with the galaxies obtained by the cluster/group
-catalogs mentioned before, to check which HECATE galaxies are known to reside well known clusters or groups. I
+To find the galaxy subset with the known cluster labels, a series of data selection techniques were applied on the catalogs mentioned above.
 
+* Through [TOPCAT (Tool for OPerations on Catalogues And Tables)](https://www.star.bris.ac.uk/~mbt/topcat/) all HECATE galaxies were cross matched with the galaxies of the other catalogs.
+
+* The resulted galaxy subset  
 
 
 ## Results
