@@ -26,7 +26,8 @@ Clustering the entire HECATE catalog is a computationally expensive process. Mor
 
 ### Selection of galaxies
 
-Through
+Through [TOPCAT (Tool for OPerations on Catalogues And Tables)](https://www.star.bris.ac.uk/~mbt/topcat/) all HECATE galaxies were cross matched with the galaxies obtained by the cluster/group
+catalogs mentioned before, to check which HECATE galaxies are known to reside well known clusters or groups. I
 
 
 
