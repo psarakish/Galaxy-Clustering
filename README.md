@@ -36,7 +36,10 @@ A total of **11517** HECATE galaxies were found to be part of well known nearby 
 
 ### Distance Metric
 
-Each galaxy was characterized by four features: `RA`, `DEC`, `Redshift` and `cluster_label`. To determine the pairwise distances for every galaxy pair
+Each galaxy was characterized by four features: `RA`, `DEC`, `Redshift` and `cluster_label`. To determine the pairwise distances for every galaxy pair, a custom
+distance function was created, adapted for spherical coordinates:\
+$D = \sqrt{\frac{1}{r^2 + r'^2 - 2r r' (\sin\theta \sin\theta' \cos(\phi - \phi') + \cos\theta \cos\theta')}}$
+
 
 
 
