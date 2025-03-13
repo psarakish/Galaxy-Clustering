@@ -30,7 +30,9 @@ To find the galaxy subset with the known cluster labels, a series of data select
 
 * Through [TOPCAT (Tool for OPerations on Catalogues And Tables)](https://www.star.bris.ac.uk/~mbt/topcat/) all HECATE galaxies were cross matched with the galaxies of the other catalogs.
 
-* The resulted galaxy subset  
+* The resulted galaxy subset was refined by applying velocity based filtering criteria.
+
+  A total of **11517** HECATE galaxies were found to be part of well known nearby clusters or groups and were involved in the **semi-supervised** method proposed.
 
 
 ## Results
