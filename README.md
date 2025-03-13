@@ -24,7 +24,7 @@ In order to develop and test the methods presented in this project, local univer
 
 Clustering the entire HECATE catalog is a computationally expensive process. Moreover, determining the optimal hyperparameters for the clustering algorithms is not straightforward. The availability of cluster labels for a small subset of HECATE presented an opportunity to apply **semi-supervised** methods. These are nearby galaxies that are known to reside big clusters, such as Coma, Hydra and Virgo. In this approach, that domain knowledge, specifically the known cluster labels for certain galaxies, was leveraged. This allowed to effectively assess how the clustering algorithms identified these cluster structures, potential galaxy alignments, and projection effects.
 
-### Selection of galaxies
+### *Selection of galaxies*
 
 To find the galaxy subset with the known cluster labels, a series of data selection techniques were applied on the catalogs mentioned above.
 
@@ -34,14 +34,29 @@ To find the galaxy subset with the known cluster labels, a series of data select
 
 A total of **11517** HECATE galaxies were found to be part of well known nearby clusters or groups and were involved in the **semi-supervised** method proposed.
 
-### Distance Metric
+###  *Distance Metric* 
 
 Each galaxy was characterized by four features: `RA`, `DEC`, `Redshift` and `cluster_label`. To determine the pairwise distances for every galaxy pair, a custom
-distance function was created, adapted for spherical coordinates:\
-$D = \sqrt{\frac{1}{r^2 + r'^2 - 2r r' (\sin\theta \sin\theta' \cos(\phi - \phi') + \cos\theta \cos\theta')}}$
+distance function was created, adapted for spherical coordinates:
 
+$$
+D = \sqrt{\frac{1}{r^2 + r'^2 - 2r r' (\sin\theta \sin\theta' \cos(\phi - \phi') + \cos\theta \cos\theta')}}
+$$
 
+where `(r,θ,φ)` and `(r',θ',φ')` spherical coordinates of a galaxy pair. The distance r and r' was calculated
+using Hubble's Law for small redshift values,
 
+$$
+r = \frac{u_{rs}}{H_0}
+$$
+where $H_{0}=67 km/s/Mpc$ is the Hubble's constant, and
+
+$$
+u_{rs} = zc
+$$
+
+>[!NOTE]
+>Assuming the expansion of the local universe is linear and distances satisfy the triangular inequality.
 
 ## Results
 
