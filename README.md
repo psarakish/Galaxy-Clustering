@@ -60,12 +60,12 @@ $$
 
 ## Results
 
-### DBSCAN
+### *DBSCAN* add info/links on sklearn website etc etc
 * Pros
 * Cons
-### Agglomerative Clustering
+### *Agglomerative Clustering*
 * Pros
 * Cons
-### Sequential Approach
+### *Stacking Approach*
 * Pros
 * Cons
