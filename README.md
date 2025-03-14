@@ -60,6 +60,9 @@ $$
 
 ## Results
 
+add table of hyperparameters 
+
+
 ### *DBSCAN* add info/links on sklearn website etc etc
 * Pros
 * Cons
