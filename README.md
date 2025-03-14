@@ -49,6 +49,7 @@ using Hubble's Law for small redshift values,
 $$
 r = \frac{u_{rs}}{H_0}
 $$
+
 where $H_{0}=67 km/s/Mpc$ is the Hubble's constant, and
 
 $$
