@@ -59,6 +59,22 @@ $$
 >[!NOTE]
 >Assuming the expansion of the local universe is linear and distances satisfy the triangular inequality.
 
+### _Evaluation_
+
+Given the luxury provided by the ground truth labeled galaxies, a suitable assessment metric would be the creation of a custom scoring function based on F1-score optimization which would evaluate the agreement between ground truth and predicted galaxy cluster labels.
+
+### _Clustering Method_
+
+Assuming that the minimun number of galaxies for a cluster/group to be identified is ``four``, there are 190 different clusters/groups on the labeled subset. The clustering algorithms were assessed on how well they predicted the number of ground truth clusters while also achieving a good performance.
+
+
+
+
+
+
+
+
+
 ## Results
 
 add table of hyperparameters 
