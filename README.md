@@ -40,7 +40,7 @@ Each galaxy was characterized by four features: `RA`, `DEC`, `Redshift` and `clu
 distance function was created, adapted for spherical coordinates:
 
 $$
-D = \sqrt{\frac{1}{r^2 + r'^2 - 2r r' (\sin\theta \sin\theta' \cos(\phi - \phi') + \cos\theta \cos\theta')}}
+D = \sqrt{r^2 + r'^2 - 2r r' (\sin\theta \sin\theta' \cos(\phi - \phi') + \cos\theta \cos\theta')}
 $$
 
 where `(r,θ,φ)` and `(r',θ',φ')` spherical coordinates of a galaxy pair. The distance r and r' was calculated
