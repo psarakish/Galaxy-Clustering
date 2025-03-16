@@ -32,7 +32,7 @@ To find the galaxy subset with the known cluster labels, a series of data select
 
 * The resulted galaxy subset was refined by applying velocity based filtering criteria.
 
-A total of **11517** HECATE galaxies were found to be part of well known nearby clusters or groups and were involved in the **semi-supervised** method proposed.
+A total of **11517** HECATE galaxies were found to be part of well known nearby clusters or groups and were involved in the **semi-supervised** method proposed. (`Clusteringdata.csv`)
 
 ###  *Distance Metric* 
 
