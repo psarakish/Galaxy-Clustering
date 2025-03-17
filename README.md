@@ -74,7 +74,7 @@ Here is an overview of the function’s implementation:
 
 ### _Clustering Method_
 
-Assuming that the minimun number of galaxies for a cluster/group to be identified is ``four``, there are 190 different clusters/groups on the labeled subset. The clustering algorithms were assessed on how well they predicted the number of ground truth clusters while also achieving a good performance.
+Assuming that the minimun number of galaxies for a cluster/group to be identified is ``4``, there are ``190 different clusters/groups`` on the labeled subset. The clustering algorithms were assessed on how well they predicted the number of ground truth clusters while also achieving a good performance.
 
 
 
