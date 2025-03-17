@@ -26,18 +26,18 @@ Clustering the entire HECATE catalog is a computationally expensive process. Mor
 
 ### *Selection of galaxies*
 
-To find the galaxy subset with the known cluster labels, a series of data selection techniques were applied on the catalogs mentioned above.
+To find the galaxy subset with the known cluster labels (`Clusteringdata.csv`), a series of data selection techniques were applied on the catalogs mentioned above.
 
 * Through [TOPCAT (Tool for OPerations on Catalogues And Tables)](https://www.star.bris.ac.uk/~mbt/topcat/) all HECATE galaxies were cross matched with the galaxies of the other catalogs.
 
 * The resulted galaxy subset was refined by applying velocity based filtering criteria.
 
-A total of **11517** HECATE galaxies were found to be part of well known nearby clusters or groups and were involved in the **semi-supervised** method proposed. (`Clusteringdata.csv`)
+A total of **11517** HECATE galaxies were found to be part of well known nearby clusters or groups and were involved in the **semi-supervised** method proposed.
 
 ###  *Distance Metric* 
 
 Each galaxy was characterized by four features: `RA`, `DEC`, `Redshift` and `cluster_label`. To determine the pairwise distances for every galaxy pair, a custom
-distance function was created, adapted for spherical coordinates:
+distance function was created, adapted for spherical coordinates (`Distance_metric.py`):
 
 $$
 D = \sqrt{r^2 + r'^2 - 2r r' (\sin\theta \sin\theta' \cos(\phi - \phi') + \cos\theta \cos\theta')}
@@ -58,6 +58,7 @@ $$
 
 >[!NOTE]
 >Assuming the expansion of the local universe is linear and distances satisfy the triangular inequality.
+
 
 ### _Evaluation_
 
