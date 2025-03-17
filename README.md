@@ -62,7 +62,7 @@ $$
 
 ### _Evaluation_
 
-Given the luxury provided by the ground truth labeled galaxies, a suitable assessment metric would be the creation of a custom scoring function based on F1-score optimization which would evaluate the agreement between ground truth and predicted galaxy cluster labels.
+Given the luxury provided by the ground truth labeled galaxies, a suitable assessment metric would be the creation of a custom scoring function based on F1-score optimization which would evaluate the agreement between ground truth and predicted galaxy cluster labels (`Evaluation.py`).
 
 ### _Clustering Method_
 
