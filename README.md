@@ -73,19 +73,29 @@ Here is an overview of the function’s implementation:
 
 ### _Clustering Method_
 
-Assuming that the minimun number of galaxies for a cluster/group to be identified is ``4``, there are ``190 different clusters/groups`` on the labeled subset. The clustering algorithms were assessed on how well they predicted the number of ground truth clusters while also achieving a good performance.
+Assuming that the minimun number of galaxies for a cluster/group to be identified is ``4``, there are ``190 different clusters/groups`` on the labeled subset. The clustering algorithms were assessed on how well they predicted the number of ground truth clusters while also achieving a good performance (`Evaluation.py`).
 
-## [*DBSCAN*](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html)
+The labeled dataset was split into ``train`` and ``test`` samples, ``80%-20%`` respectively. The same galaxies belonging to train set for one clustering algorithm,
+was the same for the other. In that way a fair and accurate comparison is ensured among the algorithms evaluation performance and clustering results. When DBSCAN and Agglomerative clustering were combined on a sequential approach, they had to be trained on different training sets in a way to avoid ``overfitting``. So the dataset was first divided into ``80%-20%`` train and test samples, and then the train set was further split into ``40%-40%``. Each half was used to train each clustering algorithm. On all cases the best models were evaluated on
+the 20% test sample.
+
+>[!IMPORTANT]
+> Upon dividing the initial dataset into an 80%-20% split, a notable issue emerged. Consider a scenario involving a group of four galaxies. The splitting process could potentially >allocate one galaxy to the test sample, leaving the remaining three for training, or the other way around. Under such circumstances, given the present assumption that a cluster needs 4 >galaxies to be identified, DBSCAN is likely to classify these isolated galaxies as outliers, leading to the loss of that particular group. So to avoid missing any small clusters of >galaxies, the best model acquired by both clustering algorithms was ``re-fit`` on the complete set of galaxies. In that way all galaxies were assigned their predicted match. However, >>this >approach inherently risked ``overfitting``, because the proper approach would require the model to be applied on a separate test set. For the purposes of this project, the primary
+>focus was to examine the behavior of the labeled data and to create a model that best describes them. In this specific context, the potential overfitting is not of great concern.
+
+#### [*DBSCAN*](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html)
+
+
 
 * Pros
 * Cons
 
-## [*Agglomerative Clustering*](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html)
+#### [*Agglomerative Clustering*](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html)
 
 * Pros
 * Cons
 
-## *Stacking Approach*
+#### *Stacking Approach*
 
 * Pros
 * Cons
