@@ -64,6 +64,14 @@ $$
 
 Given the luxury provided by the ground truth labeled galaxies, a suitable assessment metric would be the creation of a custom scoring function based on F1-score optimization which would evaluate the agreement between ground truth and predicted galaxy cluster labels (`Evaluation.py`).
 
+Here is an overview of the function’s implementation:
+* For a true cluster in the labeled set, the function finds the galaxies residing in it
+* It extracts the predicted cluster labels of these galaxies
+* Computes the true positives, false positives and false negatives by assuming two classes, one for the specific predicted cluster being investigated and all the others as a second class
+* Computes the F1score for each predicted cluster and stores the predicted cluster with the highest value
+* When the scan is completed, the function continue to the next true cluster following the same procedure
+* For all true clusters in the labeled set, it calculates the mean between all maximum F1<sub>score<sub>
+
 ### _Clustering Method_
 
 Assuming that the minimun number of galaxies for a cluster/group to be identified is ``four``, there are 190 different clusters/groups on the labeled subset. The clustering algorithms were assessed on how well they predicted the number of ground truth clusters while also achieving a good performance.
