@@ -85,12 +85,16 @@ the 20% test sample.
 
 #### [*DBSCAN*](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html)
 
-
+**DBSCAN** (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm that groups together data points that are in close proximity based on a distance measure (``eps``) and a specified density, i.e minimum number of points (``min samples``) 
 
 * Pros
 * Cons
 
 #### [*Agglomerative Clustering*](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html)
+
+**Agglomerative clustering** is the most common algorithm of *Hierachical clustering*, which adopts a ”bottom-up” strategy. Starting with each data point as a single cluster, it 
+recursively merges the closest pair of clusters into a single cluster, continuing this process until only one large cluster remains or a stopping criterion is met (``distance 
+threshold``).
 
 * Pros
 * Cons
