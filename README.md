@@ -18,6 +18,7 @@ The project is organized into the following directories:
   * Dbscan clustering algorith (``dbscan.py``)
   * AgglomerativeClustering algorithm (``hierarchical.py``)
   * Stacking of DBSCAN and AgglomerativeClustering (``stacking.py``)
+  * Plotting the results (``plots.py``)
 
 ## Dependencies
 
