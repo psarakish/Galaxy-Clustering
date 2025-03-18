@@ -100,18 +100,6 @@ Here is an overview of the function’s implementation:
 
 Assuming that the minimun number of galaxies for a cluster/group to be identified is ``4``, there are ``190 clusters/groups`` on the labeled subset. The clustering algorithms were assessed on how well they predicted the number of ground truth clusters while also achieving a good performance (`Evaluation.py`).
 
-```mermaid
-graph TD;
-    DATA-->TRAIN;
-    DATA-->TEST;
-    TRAIN-->DBSCAN/AGGLOMERATIVE;
-    DBSCAN/AGGLOMERATIVE-->BEST_MODEL;
-    BEST_MODEL-->PRED_DATA;
-    PRED_DATA-->PRED_TEST;
-    TEST-->EVALUATION;
-    PRED_TEST-->EVALUATION;
-```
-
 The labeled dataset was split into ``train`` and ``test`` samples, ``80%-20%`` respectively. The same galaxies belonging to train set for ``DBSCAN`` ,
 was the same for ``AgglomerativeClustering``. In that way a fair and accurate comparison is ensured among the algorithms evaluation performance and clustering results. When DBSCAN and Agglomerative clustering were combined on a ``stacking approach``, they had to be trained on different training sets in a way to avoid ``overfitting``. So the dataset was first divided into ``80%-20%`` train and test samples, and then the train set was further split into ``40%-40%``. Each half was used to train each clustering algorithm. On all cases the best models were evaluated on the 20% test sample.
 
