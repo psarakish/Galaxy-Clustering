@@ -13,6 +13,12 @@ The project is organized into the following directories:
 
 * **scripts**: This directory contains Python modules (.py files) that can be used to perform the objectives of this project.
 
+  * Calculate galactic distances (``Distance_metric.py``)
+  * Evaluation of clustering results (``Evaluation.py``)
+  * Dbscan clustering algorith (``dbscan.py``)
+  * AgglomerativeClustering algorithm (``hierarchical.py``)
+  * Stacking of DBSCAN and AgglomerativeClustering (``stacking.py``)
+
 ## Dependencies
 
 Python libraries:
