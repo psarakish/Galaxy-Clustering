@@ -106,7 +106,7 @@ threshold``)(``hierarchical.py``).
 
 #### *Stacking Approach*
 
-This approach was considered a stacking of the two clustering models to obtain the ultimate prediction. DBSCAN cleaning the dataset from outliers and AgglomerativeClustering performing the clustering process on that cleaned set. This approach was implemented due to the desire to explore the combined potential of both algorithms, examining how the stacking application could enhance the reliability and accuracy of the clustering results. The high performance score *(see Results)* indicates that its more effective on predicting the ground truth cluster, than when the two algorithms are performed seperately.
+This approach was considered a stacking of the two clustering models to obtain the ultimate prediction. DBSCAN cleaning the dataset from outliers and AgglomerativeClustering performing the clustering process on that cleaned set. This approach was implemented due to the desire to explore the combined potential of both algorithms, examining how the stacking application could enhance the reliability and accuracy of the clustering results. The high performance score *(see Results)* indicates that its more effective on predicting the ground truth cluster, than when the two algorithms are performed seperately (``stacking.py``).
 
 ## Results
 
