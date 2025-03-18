@@ -1,19 +1,9 @@
-import plotly.graph_objects as go
-
 avg_percentage, mapping_dict = scoring_metric(encoded_labels, labels_pred, return_match=True)
-
-outlier_mapped_labels = []
 for key, value in mapping_dict.items():
-    if value == -1:
-        print(f"True label {key} is mostly predicted as noise/outliers.")
-        outlier_mapped_labels.append(key)
-    else:
-        print(f"True label {key} is mostly predicted as {value}")
-
-topclusters['PredLabels'] = topclusters.index.map(lambda idx: labels_pred[idx])
-
+    print(f"True label {key} is mostly predicted as {value}")
 true_labels_subset = topclusters['EncodedLabels'].values
 pred_labels_subset = labels_pred[topclusters.index]
+# Create a DataFrame for true and predicted labels
 df_labels = pd.DataFrame({
     'TrueLabel': true_labels_subset,
     'PredLabel': pred_labels_subset
@@ -22,7 +12,7 @@ df_labels = pd.DataFrame({
 # Find the most common predicted label for each true label
 most_common_pred_for_true = df_labels.groupby('TrueLabel')['PredLabel'].apply(lambda x: x.mode()[0])
 
-# False positives
+# Find false positives
 def is_false_positive(row):
     return row['PredLabel'] != most_common_pred_for_true[row['TrueLabel']]
 
@@ -30,19 +20,10 @@ misclassified_idxs = df_labels[df_labels.apply(is_false_positive, axis=1)].index
 
 print(f"Total false positives: {len(misclassified_idxs)}")
 
-# Find the most common true label for each predicted label
-most_common_true_for_pred = df_labels.groupby('PredLabel')['TrueLabel'].apply(lambda x: x.mode()[0])
+data['PredLabels'] = labels_pred
+topclusters['PredLabels'] = topclusters.index.map(lambda idx: labels_pred[idx])
 
-# Find false negatives
-def is_false_negative(row):
-    common_pred_for_true = most_common_pred_for_true[row['TrueLabel']]
-    common_true_for_pred = most_common_true_for_pred[row['PredLabel']]
-    
-    return (row['TrueLabel'] != common_true_for_pred) and (row['PredLabel'] == common_pred_for_true)
-
-false_negative_idxs = df_labels[df_labels.apply(is_false_negative, axis=1)].index.tolist()
-
-print(f"Total false negatives: {len(false_negative_idxs)}")
+import plotly.graph_objects as go
 
 # Get data for top clusters
 topclusters = data[data['EncodedLabels'].isin(topclusters_values)]
@@ -97,6 +78,5 @@ layout = go.Layout(
     )
 )
 
-fig = go.Figure(data=[scatter_true], layout=layout) #, scatter_pred, scatter_misclassified], layout=layout)
+fig = go.Figure(data=[scatter_true, scatter_pred, scatter_misclassified], layout=layout)
 fig.show()
-
