@@ -12,7 +12,18 @@ The project is organized into the following directories:
 * **data**: This directory stores the data (``Clusteringdata.csv``) that were used for clustering.
 
 * **scripts**: This directory contains Python modules (.py files) that can be used to perform the objectives of this project.
-  
+
+## Dependencies
+
+Python libraries:
+
+* Pandas
+* Numpy
+* Scikit-learn
+* matplotlib
+* plotly
+* astropy.coordinates
+    
 ## Data
 
 [HECATE (The Heraklion Extragalactic CATaloguE) (K. Kovlakas, A. Zezas, J. Andrews
