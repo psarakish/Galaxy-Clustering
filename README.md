@@ -96,7 +96,7 @@ was the same for ``AgglomerativeClustering``. In that way a fair and accurate co
 
 **Agglomerative clustering** is the most common algorithm of *Hierachical clustering*, which adopts a ”bottom-up” strategy. Starting with each data point as a single cluster, it 
 recursively merges the closest pair of clusters into a single cluster, continuing this process until only one large cluster remains or a stopping criterion is met (``distance 
-threshold``).
+threshold``)(``hierarchical.py``).
 
 * Pros:
   * Predicts more clusters than DBSCAN, i.e under structures/subgroups
