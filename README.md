@@ -110,4 +110,9 @@ This approach was considered a stacking of the two clustering models to obtain t
 
 ## Results
 
+| Algorithm | Hyperparameters | Range | Value | Score |
+| :---: | :---: | :---: | :---: | :---: |
+| DBSCAN | eps <br> min_samples | 1-10 | 2.0 <br> 4.0 | 91.8% |
+| Agglomerative | distance_threshold | 1-20 | 6.0 | 94.1% |
+| Stacking | eps <br> min_samples <br> distance_threshold | 1-10 <br> <br> 1-20 | 2.0 <br> 4.0 <br> 5.0 | 97.4% |
 
