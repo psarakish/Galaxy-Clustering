@@ -73,22 +73,24 @@ Here is an overview of the function’s implementation:
 
 ### _Clustering Method_
 
-Assuming that the minimun number of galaxies for a cluster/group to be identified is ``4``, there are ``190 different clusters/groups`` on the labeled subset. The clustering algorithms were assessed on how well they predicted the number of ground truth clusters while also achieving a good performance (`Evaluation.py`).
+Assuming that the minimun number of galaxies for a cluster/group to be identified is ``4``, there are ``190 clusters/groups`` on the labeled subset. The clustering algorithms were assessed on how well they predicted the number of ground truth clusters while also achieving a good performance (`Evaluation.py`).
 
 The labeled dataset was split into ``train`` and ``test`` samples, ``80%-20%`` respectively. The same galaxies belonging to train set for ``DBSCAN`` ,
-was the same for ``AgglomerativeClustering``. In that way a fair and accurate comparison is ensured among the algorithms evaluation performance and clustering results. When DBSCAN and Agglomerative clustering were combined on a ``stacking approach``, they had to be trained on different training sets in a way to avoid ``overfitting``. So the dataset was first divided into ``80%-20%`` train and test samples, and then the train set was further split into ``40%-40%``. Each half was used to train each clustering algorithm. On all cases the best models were evaluated on
-the 20% test sample.
+was the same for ``AgglomerativeClustering``. In that way a fair and accurate comparison is ensured among the algorithms evaluation performance and clustering results. When DBSCAN and Agglomerative clustering were combined on a ``stacking approach``, they had to be trained on different training sets in a way to avoid ``overfitting``. So the dataset was first divided into ``80%-20%`` train and test samples, and then the train set was further split into ``40%-40%``. Each half was used to train each clustering algorithm. On all cases the best models were evaluated on the 20% test sample.
 
 >[!IMPORTANT]
-> Upon dividing the initial dataset into an 80%-20% split, a notable issue emerged. Consider a scenario involving a group of four galaxies. The splitting process could potentially >allocate one galaxy to the test sample, leaving the remaining three for training, or the other way around. Under such circumstances, given the present assumption that a cluster needs 4 >galaxies to be identified, DBSCAN is likely to classify these isolated galaxies as outliers, leading to the loss of that particular group. So to avoid missing any small clusters of >galaxies, the best model acquired by both clustering algorithms was ``re-fit`` on the complete set of galaxies. In that way all galaxies were assigned their predicted match. However, >>this >approach inherently risked ``overfitting``, because the proper approach would require the model to be applied on a separate test set. For the purposes of this project, the primary
+>Upon dividing the initial dataset into an 80%-20% split, a notable issue emerged. Consider a scenario involving a group of four galaxies. The splitting process could potentially >allocate one galaxy to the test sample, leaving the remaining three for training, or the other way around. Under such circumstances, given the present assumption that a cluster needs 4 >galaxies to be identified, DBSCAN is likely to classify these isolated galaxies as outliers, leading to the loss of that particular group. So to avoid missing any small clusters of >galaxies, the best model acquired by both clustering algorithms was ``re-fit`` on the complete set of galaxies. In that way all galaxies were assigned their predicted match. However, >this approach inherently risked ``overfitting``, because the proper approach would require the model to be applied on a separate test set. For the purposes of this project, the primary
 >focus was to examine the behavior of the labeled data and to create a model that best describes them. In this specific context, the potential overfitting is not of great concern.
 
 #### [*DBSCAN*](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html)
 
-**DBSCAN** (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm that groups together data points that are in close proximity based on a distance measure (``eps``) and a specified density, i.e minimum number of points (``min samples``) 
+**DBSCAN** (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm that groups together data points that are in close proximity based on a distance measure (``eps``) and a specified density, i.e minimum number of points (``min samples``) (``dbscan.py``).
 
-* Pros
-* Cons
+* Pros:
+  * Predicts the total number of ground truth clusters
+  * Identifies misclassifications and galaxy allignments
+* Cons:
+  * Quite strict on exluding galaxies out of clusters
 
 #### [*Agglomerative Clustering*](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html)
 
@@ -96,10 +98,16 @@ the 20% test sample.
 recursively merges the closest pair of clusters into a single cluster, continuing this process until only one large cluster remains or a stopping criterion is met (``distance 
 threshold``).
 
-* Pros
-* Cons
+* Pros:
+  * Predicts more clusters than DBSCAN, i.e under structures/subgroups
+  * Identifies misclassifications and galaxy allignments
+* Cons:
+  * Includes misclassified objects as part of clusters
 
 #### *Stacking Approach*
 
-* Pros
-* Cons
+This approach was considered a stacking of the two clustering models to obtain the ultimate prediction. DBSCAN cleaning the dataset from outliers and AgglomerativeClustering performing the clustering process on that cleaned set. This approach was implemented due to the desire to explore the combined potential of both algorithms, examining how the stacking application could enhance the reliability and accuracy of the clustering results. The high performance score *(see Results)* indicates that its more effective on predicting the ground truth cluster, than when the two algorithms are performed seperately.
+
+## Results
+
+
