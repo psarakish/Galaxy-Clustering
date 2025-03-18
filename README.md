@@ -135,3 +135,8 @@ This approach was considered a stacking of the two clustering models to obtain t
 | Agglomerative | distance_threshold | 1-20 | 6.0 | 94.1% |
 | Stacking | eps <br> min_samples <br> distance_threshold | 1-10 <br> <br> 1-20 | 2.0 <br> 4.0 <br> 5.0 | 97.4% |
 
+## Further development
+
+For future applications on the whole HECATE catalog, and not just the labeled set performed in this study, all three clustering methods can be applied with the hyperparameters set from
+this analysis, hoping that the results will still be significant. It should be noted that clustering the whole 204,733 galaxy catalog will be a computationally expensive procedure, and 
+that is why this project was limited only on the already labeled galaxies of HECATE.
